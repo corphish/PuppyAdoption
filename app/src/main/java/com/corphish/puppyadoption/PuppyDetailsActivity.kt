@@ -146,7 +146,7 @@ fun PuppyContent(puppy: Puppy, closeButtonAction: () -> Unit) {
             }
         }
         Text(
-            text = "❤ Adopted by ${puppy.adoptionCount} people",
+            text = "❤ Same breed already adopted by ${puppy.adoptionCount} people",
             style = MaterialTheme.typography.caption
         )
         if (puppy.description.isNotEmpty()) {
