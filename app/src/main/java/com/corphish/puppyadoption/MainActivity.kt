@@ -17,11 +17,19 @@ class MainActivity : AppCompatActivity() {
             PuppyAdoptionTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                    MainLayout()
                 }
             }
         }
     }
+}
+
+/**
+ * Main layout of the app.
+ */
+@Composable
+fun MainLayout() {
+    Greeting("Android")
 }
 
 @Composable
@@ -33,6 +41,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     PuppyAdoptionTheme {
-        Greeting("Android")
+        MainLayout()
     }
 }
