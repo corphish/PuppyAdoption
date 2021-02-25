@@ -28,4 +28,10 @@ object Puppies {
             description = "",
         ),
     )
+
+    /**
+     * Returns a puppy for the given id.
+     */
+    fun getPuppyById(id: Int) =
+        LIST.find { it.id == id }
 }
