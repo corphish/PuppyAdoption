@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -46,7 +47,7 @@ class PuppyDetailsActivity : AppCompatActivity() {
                     if (puppy == null) {
                         ErrorLayout()
                     } else {
-                        PuppyContent(puppy = puppy)
+                        PuppyContent(puppy = puppy) { finish() }
                     }
                 }
             }
@@ -63,7 +64,18 @@ fun ErrorLayout() {
  * Main content of the app.
  */
 @Composable
-fun PuppyContent(puppy: Puppy) {
+fun PuppyContent(puppy: Puppy, closeButtonAction: () -> Unit) {
+    IconButton(
+        onClick = { closeButtonAction() },
+        modifier = Modifier.padding(16.dp)
+    ) {
+        Icon(
+            imageVector = Icons.Filled.ArrowBack,
+            contentDescription = null,
+            modifier = Modifier
+                .size(64.dp)
+        )
+    }
     Column(
         modifier = Modifier
             .padding(24.dp)
