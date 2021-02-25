@@ -15,9 +15,6 @@ import androidx.compose.ui.unit.dp
 import com.corphish.puppyadoption.data.models.Puppy
 import com.corphish.puppyadoption.ui.theme.PuppyAdoptionTheme
 import androidx.compose.foundation.lazy.items
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import com.bumptech.glide.request.RequestOptions

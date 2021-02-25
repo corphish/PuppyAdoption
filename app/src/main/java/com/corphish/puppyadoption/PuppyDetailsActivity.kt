@@ -23,6 +23,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.corphish.puppyadoption.data.Constants
 import com.corphish.puppyadoption.data.Puppies
 import com.corphish.puppyadoption.data.models.Puppy
+import com.corphish.puppyadoption.ui.theme.Montserrat
 import com.corphish.puppyadoption.ui.theme.PuppyAdoptionTheme
 import dev.chrisbanes.accompanist.glide.GlideImage
 import dev.chrisbanes.accompanist.imageloading.ImageLoadState
@@ -123,7 +124,11 @@ fun PuppyContent(puppy: Puppy) {
                 )
                 Text("ADOPT",
                     modifier = Modifier.padding(start = 8.dp, end = 8.dp),
-                    style = TextStyle(letterSpacing = 2.sp, fontWeight = FontWeight.SemiBold),
+                    style = TextStyle(
+                        letterSpacing = 2.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        fontFamily = Montserrat
+                    ),
                     fontSize = 16.sp
                 )
             }
