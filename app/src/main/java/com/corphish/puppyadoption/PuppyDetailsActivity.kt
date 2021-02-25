@@ -125,7 +125,7 @@ fun PuppyContent(puppy: Puppy, closeButtonAction: () -> Unit) {
         Button(
             onClick = { },
             modifier = Modifier
-                .padding(horizontal = 8.dp, vertical = 16.dp)
+                .padding(horizontal = 8.dp,vertical = 16.dp)
                 .clip(RoundedCornerShape(16.dp)),
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -145,6 +145,10 @@ fun PuppyContent(puppy: Puppy, closeButtonAction: () -> Unit) {
                 )
             }
         }
+        Text(
+            text = "❤ Adopted by ${puppy.adoptionCount} people",
+            style = MaterialTheme.typography.caption
+        )
         Text(
             text = "Bio",
             style = MaterialTheme.typography.h5,
