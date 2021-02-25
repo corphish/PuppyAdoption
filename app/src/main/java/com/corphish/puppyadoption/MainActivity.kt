@@ -3,6 +3,7 @@ package com.corphish.puppyadoption
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
@@ -15,7 +16,6 @@ import com.corphish.puppyadoption.ui.theme.PuppyAdoptionTheme
 import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.TextStyle
 import com.bumptech.glide.request.RequestOptions
 import com.corphish.puppyadoption.data.Puppies
 import dev.chrisbanes.accompanist.glide.GlideImage
@@ -84,7 +84,14 @@ fun PuppyList(puppies: List<Puppy>) {
  */
 @Composable
 fun PuppyItem(puppy: Puppy) {
-    Row(modifier = Modifier.padding(horizontal = 8.dp, vertical = 8.dp)) {
+    Row(
+        modifier = Modifier
+            .clickable(
+                onClick = {},
+            )
+            .padding(horizontal = 8.dp, vertical = 8.dp)
+            .fillMaxWidth(),
+    ) {
         GlideImage(
             data = puppy.imageURL,
             requestBuilder = {
