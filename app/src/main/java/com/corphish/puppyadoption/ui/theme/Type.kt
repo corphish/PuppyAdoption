@@ -35,7 +35,7 @@ val Typography = Typography(
     caption = TextStyle(
         fontFamily = Montserrat,
         fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
+        fontSize = 13.sp
     ),
     h1 = TextStyle(
         fontFamily = Montserrat,
