@@ -5,6 +5,11 @@ package com.corphish.puppyadoption.data.models
  */
 data class Puppy(
     /**
+     * Id of this puppy.
+     */
+    val id: Int,
+
+    /**
      * Direct URL link to the image of this puppy.
      */
     val imageURL: String,
@@ -18,6 +23,11 @@ data class Puppy(
      * Breed of the puppy.
      */
     val breed: String,
+
+    /**
+     * Age of this puppy.
+     */
+    val age: String,
 
     /**
      * Description of the puppy.
