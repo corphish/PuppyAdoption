@@ -52,13 +52,23 @@ val Typography = Typography(
         fontWeight = FontWeight.SemiBold,
         fontSize = 36.sp
     ),
+    h4 = TextStyle(
+        fontFamily = Montserrat,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 28.sp
+    ),
+    h5 = TextStyle(
+        fontFamily = Montserrat,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 24.sp
+    ),
     h6 = TextStyle(
         fontFamily = Montserrat,
         fontWeight = FontWeight.SemiBold,
         fontSize = 18.sp
     ),
     subtitle1 = TextStyle(
-        fontFamily = FontFamily.Default,
+        fontFamily = Montserrat,
         fontWeight = FontWeight.Normal,
         fontSize = 18.sp
     ),
