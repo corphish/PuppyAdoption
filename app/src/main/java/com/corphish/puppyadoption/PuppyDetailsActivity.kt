@@ -73,7 +73,7 @@ fun PuppyContent(puppy: Puppy, closeButtonAction: () -> Unit) {
             imageVector = Icons.Filled.ArrowBack,
             contentDescription = null,
             modifier = Modifier
-                .size(64.dp)
+                .size(48.dp)
         )
     }
     Column(
