@@ -3,15 +3,17 @@ package com.corphish.puppyadoption
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import com.corphish.puppyadoption.data.models.Puppy
 import com.corphish.puppyadoption.ui.theme.PuppyAdoptionTheme
+import androidx.compose.foundation.lazy.items
+import com.corphish.puppyadoption.data.Puppies
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,12 +55,29 @@ fun MainLayout() {
  */
 @Composable
 fun MainContent() {
-    Greeting("Android")
+    PuppyList(puppies = Puppies.LIST)
 }
 
+/**
+ * Shows the list of puppies.
+ */
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+fun PuppyList(puppies: List<Puppy>) {
+    LazyColumn(
+        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
+    ) {
+        items(puppies) {
+            PuppyItem(puppy = it)
+        }
+    }
+}
+
+/**
+ * Shows one puppy.
+ */
+@Composable
+fun PuppyItem(puppy: Puppy) {
+    Text(text = puppy.name)
 }
 
 @Preview(showBackground = true)
