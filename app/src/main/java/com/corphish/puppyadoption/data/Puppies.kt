@@ -47,9 +47,25 @@ object Puppies {
         Puppy(
             id = 4,
             name = "Maya",
-            breed = "Husky",
+            breed = "Corgi",
             age = "3 months",
             imageURL = "https://theawesomedaily.com/wp-content/uploads/2017/04/corgi-puppies-3a-1.jpg",
+            description = "",
+        ),
+        Puppy(
+            id = 5,
+            name = "Alice",
+            breed = "Pom",
+            age = "3 months",
+            imageURL = "https://i1.wp.com/readysetpuppy.com/wp-content/uploads/2019/10/Bringing-home-a-Pomeranian.jpg?fit=999%2C613&ssl=1",
+            description = "",
+        ),
+        Puppy(
+            id = 6,
+            name = "Harry",
+            breed = "Bulldog",
+            age = "2 months",
+            imageURL = "https://i.pinimg.com/originals/67/4c/fe/674cfe9396a93664cfef2d291571736a.jpg",
             description = "",
         ),
     )
