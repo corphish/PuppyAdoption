@@ -105,7 +105,7 @@ fun PuppyContent(puppy: Puppy) {
         Text(text = puppy.name, style = MaterialTheme.typography.h2)
         Text(text = puppy.breed, style = MaterialTheme.typography.button, fontSize = 20.sp)
         Text(text = "${puppy.age} old", style = MaterialTheme.typography.subtitle1)
-        Text(text = puppy.description)
+        Text(text = puppy.description, modifier = Modifier.padding(top = 8.dp))
     }
 }
 
