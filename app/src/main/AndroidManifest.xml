@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PuppyAdoption">
         <activity
+            android:name=".PuppyDetailsActivity"
+            android:exported="true"
+            android:theme="@style/Theme.PuppyAdoption.NoActionBar"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
