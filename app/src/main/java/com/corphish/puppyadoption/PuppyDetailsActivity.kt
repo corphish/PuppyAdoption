@@ -134,6 +134,14 @@ fun PuppyContent(puppy: Puppy) {
             }
         }
         Text(
+            text = "Bio",
+            style = MaterialTheme.typography.h5,
+            color = MaterialTheme.colors.primary,
+            modifier = Modifier
+                .padding(top = 16.dp)
+                .fillMaxWidth()
+        )
+        Text(
             text = puppy.description,
             modifier = Modifier.padding(top = 8.dp),
             style = MaterialTheme.typography.subtitle1
