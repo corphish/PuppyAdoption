@@ -33,4 +33,9 @@ data class Puppy(
      * Description of the puppy.
      */
     val description: String,
+
+    /**
+     * Adoption count.
+     */
+    val adoptionCount: Int = 16 + (Math.random() * 100).toInt()
 )
