@@ -70,9 +70,7 @@ fun MainContent() {
  */
 @Composable
 fun PuppyList(puppies: List<Puppy>) {
-    LazyColumn(
-        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
-    ) {
+    LazyColumn {
         items(puppies) {
             PuppyItem(puppy = it)
         }
@@ -89,7 +87,7 @@ fun PuppyItem(puppy: Puppy) {
             .clickable(
                 onClick = {},
             )
-            .padding(horizontal = 8.dp, vertical = 8.dp)
+            .padding(horizontal = 16.dp, vertical = 8.dp)
             .fillMaxWidth(),
     ) {
         GlideImage(
@@ -119,7 +117,7 @@ fun PuppyItem(puppy: Puppy) {
         }
 
         Column(
-            modifier = Modifier.padding(horizontal = 16.dp, vertical = 0.dp),
+            modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
             verticalArrangement = Arrangement.Center
         ) {
             Text(text = puppy.name, style = MaterialTheme.typography.h6)
