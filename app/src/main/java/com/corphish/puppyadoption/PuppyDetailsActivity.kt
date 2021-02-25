@@ -149,19 +149,21 @@ fun PuppyContent(puppy: Puppy, closeButtonAction: () -> Unit) {
             text = "❤ Adopted by ${puppy.adoptionCount} people",
             style = MaterialTheme.typography.caption
         )
-        Text(
-            text = "Bio",
-            style = MaterialTheme.typography.h5,
-            color = MaterialTheme.colors.primary,
-            modifier = Modifier
-                .padding(top = 16.dp)
-                .fillMaxWidth()
-        )
-        Text(
-            text = puppy.description,
-            modifier = Modifier.padding(top = 8.dp),
-            style = MaterialTheme.typography.subtitle1
-        )
+        if (puppy.description.isNotEmpty()) {
+            Text(
+                text = "Bio",
+                style = MaterialTheme.typography.h5,
+                color = MaterialTheme.colors.primary,
+                modifier = Modifier
+                    .padding(top = 16.dp)
+                    .fillMaxWidth()
+            )
+            Text(
+                text = puppy.description,
+                modifier = Modifier.padding(top = 8.dp),
+                style = MaterialTheme.typography.subtitle1
+            )
+        }
     }
 }
 
