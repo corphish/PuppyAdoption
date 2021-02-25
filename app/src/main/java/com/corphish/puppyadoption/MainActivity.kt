@@ -1,5 +1,6 @@
 package com.corphish.puppyadoption
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import com.bumptech.glide.request.RequestOptions
+import com.corphish.puppyadoption.data.Constants
 import com.corphish.puppyadoption.data.Puppies
 import dev.chrisbanes.accompanist.glide.GlideImage
 import dev.chrisbanes.accompanist.imageloading.ImageLoadState
@@ -29,10 +31,23 @@ class MainActivity : AppCompatActivity() {
             PuppyAdoptionTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    MainLayout()
+                    MainLayout(
+                        puppies = Puppies.LIST,
+                        onClick = { performPuppyItemClick(it) }
+                    )
                 }
             }
         }
+    }
+
+    /**
+     * Handles puppy item clicks.
+     */
+    private fun performPuppyItemClick(id: Int) {
+        val intent = Intent(this, PuppyDetailsActivity::class.java)
+        intent.putExtra(Constants.PUPPY_ID, id)
+
+        startActivity(intent)
     }
 }
 
@@ -40,7 +55,7 @@ class MainActivity : AppCompatActivity() {
  * Main layout of the app.
  */
 @Composable
-fun MainLayout() {
+fun MainLayout(puppies: List<Puppy>, onClick: (Int) -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -53,7 +68,10 @@ fun MainLayout() {
                 elevation = 2.dp
             )
         },
-        content = { MainContent() }
+        content = { MainContent(
+            puppies = puppies,
+            onClick = onClick
+        ) }
     )
 }
 
@@ -61,18 +79,18 @@ fun MainLayout() {
  * Main content of the app.
  */
 @Composable
-fun MainContent() {
-    PuppyList(puppies = Puppies.LIST)
+fun MainContent(puppies: List<Puppy>, onClick: (Int) -> Unit) {
+    PuppyList(puppies = puppies, onClick = onClick)
 }
 
 /**
  * Shows the list of puppies.
  */
 @Composable
-fun PuppyList(puppies: List<Puppy>) {
+fun PuppyList(puppies: List<Puppy>, onClick: (Int) -> Unit) {
     LazyColumn {
         items(puppies) {
-            PuppyItem(puppy = it)
+            PuppyItem(puppy = it, onClick = onClick)
         }
     }
 }
@@ -81,11 +99,11 @@ fun PuppyList(puppies: List<Puppy>) {
  * Shows one puppy.
  */
 @Composable
-fun PuppyItem(puppy: Puppy) {
+fun PuppyItem(puppy: Puppy, onClick: (Int) -> Unit) {
     Row(
         modifier = Modifier
             .clickable(
-                onClick = {},
+                onClick = { onClick(puppy.id) },
             )
             .padding(horizontal = 16.dp, vertical = 8.dp)
             .fillMaxWidth(),
@@ -130,6 +148,6 @@ fun PuppyItem(puppy: Puppy) {
 @Composable
 fun DefaultPreview() {
     PuppyAdoptionTheme {
-        MainLayout()
+        MainLayout(Puppies.LIST) {}
     }
 }
