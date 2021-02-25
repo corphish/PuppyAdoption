@@ -14,13 +14,13 @@ object Puppies {
         Puppy(
             name = "Poppy",
             breed = "Beagle",
-            imageURL = "",
-            description = "",
+            imageURL = "https://i.pinimg.com/originals/f7/2e/31/f72e31a9a382678f511ba44318da8237.png",
+            description = "Beagles are cute.",
         ),
         Puppy(
             name = "Jimmy",
-            breed = "Spaniel",
-            imageURL = "",
+            breed = "Samoyed",
+            imageURL = "https://thumbs.dreamstime.com/b/face-happy-samoyed-dog-36472428.jpg",
             description = "",
         ),
     )
