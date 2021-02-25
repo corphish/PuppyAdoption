@@ -26,7 +26,7 @@ object Puppies {
             breed = "Samoyed",
             age = "8 months",
             imageURL = "https://worlddogfinder.com/upload/media/samoyed_smiling_muF1U2NDQ6.jpg",
-            description = "",
+            description = "Hey there. I can make sure that no one trespasses in our household. Bonus: I am too cute!",
         ),
         Puppy(
             id = 2,
@@ -34,7 +34,7 @@ object Puppies {
             breed = "Golden Retriever",
             age = "1.1 years",
             imageURL = "https://thehappypuppysite.com/wp-content/uploads/2017/12/puppy9.jpg",
-            description = "",
+            description = "I love playing catch, tag, eat chimkens and much more. You will love adoring me.",
         ),
         Puppy(
             id = 3,
