@@ -15,6 +15,9 @@ import androidx.compose.ui.unit.dp
 import com.corphish.puppyadoption.data.models.Puppy
 import com.corphish.puppyadoption.ui.theme.PuppyAdoptionTheme
 import androidx.compose.foundation.lazy.items
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import com.bumptech.glide.request.RequestOptions
@@ -56,22 +59,22 @@ class MainActivity : AppCompatActivity() {
  */
 @Composable
 fun MainLayout(puppies: List<Puppy>, onClick: (Int) -> Unit) {
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text(
-                        text = stringResource(id = R.string.app_name),
-                    )
-                },
-                backgroundColor = MaterialTheme.colors.background,
-                elevation = 2.dp
-            )
-        },
-        content = { MainContent(
-            puppies = puppies,
-            onClick = onClick
-        ) }
+    Column {
+        HeaderLayout()
+        MainContent(puppies = puppies, onClick = onClick)
+    }
+}
+
+/**
+ * App header
+ */
+@Composable
+fun HeaderLayout() {
+    // Adoption count
+    Text(
+        text = stringResource(id = R.string.app_name),
+        style = MaterialTheme.typography.h2,
+        modifier = Modifier.padding(24.dp)
     )
 }
 

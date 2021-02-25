@@ -3,15 +3,18 @@ package com.corphish.puppyadoption
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -63,6 +66,7 @@ fun PuppyContent(puppy: Puppy) {
     Column(
         modifier = Modifier
             .padding(24.dp)
+            .fillMaxHeight()
             .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -104,8 +108,31 @@ fun PuppyContent(puppy: Puppy) {
 
         Text(text = puppy.name, style = MaterialTheme.typography.h2)
         Text(text = puppy.breed, style = MaterialTheme.typography.button, fontSize = 20.sp)
-        Text(text = "${puppy.age} old", style = MaterialTheme.typography.subtitle1)
-        Text(text = puppy.description, modifier = Modifier.padding(top = 8.dp))
+        Text(text = "${puppy.age} old", style = MaterialTheme.typography.body1)
+        Button(
+            onClick = { },
+            modifier = Modifier
+                .padding(horizontal = 8.dp, vertical = 16.dp)
+                .clip(RoundedCornerShape(16.dp)),
+        ) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    imageVector = Icons.Filled.Favorite,
+                    contentDescription = null,
+                    modifier = Modifier.padding(start = 8.dp, end = 8.dp)
+                )
+                Text("ADOPT",
+                    modifier = Modifier.padding(start = 8.dp, end = 8.dp),
+                    style = TextStyle(letterSpacing = 2.sp, fontWeight = FontWeight.SemiBold),
+                    fontSize = 16.sp
+                )
+            }
+        }
+        Text(
+            text = puppy.description,
+            modifier = Modifier.padding(top = 8.dp),
+            style = MaterialTheme.typography.subtitle1
+        )
     }
 }
 
